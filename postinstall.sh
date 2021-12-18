@@ -262,6 +262,28 @@ if [ ! -d ~/Documents/projects ]; then
   mkdir -p ~/Documents/projects;
 fi
 
+# Create example project that uses Docker to spin up MySQL + Adminer available at localhost:8080
+mkdir ~/Documents/projects/example-docker-mysql
+cat <<EXAMPLEPROJECT > ~/Documents/projects/example-docker-mysql/docker-compose.yml
+# Use root/example as user/password credentials
+version: '3.1'
+
+services:
+
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+EXAMPLEPROJECT
+
 # create my own np (new project) command, you give it one argument (the desired folder name)
 # and it creates it in the ~/Documents/projects directory, opens it in Codium for you
 # and automatically runs npm init -y for you.
