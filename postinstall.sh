@@ -325,7 +325,7 @@ killall gnome-shell
 # Temporarily, you'll need to use sudo with docker and docker-compose commands, however
 # as soon as you restart your computer group memberships will be fully refreshed
 # and you'll be able to use docker and docker-compose without sudo.
-sudo groupadd docker
+# sudo groupadd docker
 sudo usermod -aG docker $USER
 
 # Oh My ZSH
