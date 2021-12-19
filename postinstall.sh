@@ -341,7 +341,6 @@ secondary-color='#000000'
 MYGNOME
 dconf load / < ~/Downloads/mygnome.dconf
 rm ~/Downloads/mygnome.dconf
-killall gnome-shell
 
 # allow docker commands without needing sudo
 # Temporarily, you'll need to use sudo with docker and docker-compose commands, however
@@ -353,4 +352,4 @@ sudo usermod -aG docker $USER
 # Oh My ZSH
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
-
+killall gnome-shell
