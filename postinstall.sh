@@ -341,7 +341,7 @@ secondary-color='#000000'
 MYGNOME
 dconf load / < ~/Downloads/mygnome.dconf
 rm ~/Downloads/mygnome.dconf
-killall gnome-shell
+# killall gnome-shell
 
 # allow docker commands without needing sudo
 # Temporarily, you'll need to use sudo with docker and docker-compose commands, however
